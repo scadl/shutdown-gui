@@ -1,2 +1,4 @@
 # shutdown-gui
-This smal, but useful gui wrapper for windows builti shutdown console command.
+This small, but useful gui wrapper for windows built-in 'shutdown' console command.
+
+Advanced Shutdown — один из моих поздних проектов. В основе лежит взаимодействие с настраиваемой консольной программой shudown.exe из состава официальной поставки Windows. Идея написать эту программу пришла мне в голову, когда я увидел, как мама засыпает с включённым ноутбуком, слушая музыку, или смотря краем глаза кино. Я предложил ей, что могу написать программу которая будет выключать ей ноутбук через заданный интервал времени, и она согласилась.
