@@ -3139,11 +3139,11 @@ object Form1: TForm1
     Height = 13
     Caption = 'DebugLabel'
   end
-  object RadioGroup1: TRadioGroup
+  object rgAction: TRadioGroup
     Left = 8
     Top = 8
     Width = 273
-    Height = 137
+    Height = 168
     Caption = ' '#1063#1090#1086' '#1089#1076#1077#1083#1072#1090#1100'? '
     Items.Strings = (
       #1042#1099#1082#1083#1102#1095#1080#1090#1100' '#1073#1077#1079#1086#1087#1072#1089#1085#1086
@@ -3151,11 +3151,12 @@ object Form1: TForm1
       #1042#1099#1081#1090#1080' '#1080#1079' '#1089#1080#1089#1090#1077#1084#1099', '#1085#1077' '#1074#1099#1082#1083#1102#1095#1072#1090#1100
       #1055#1077#1088#1077#1079#1072#1075#1088#1091#1079#1080#1090#1100' '#1089' '#1079#1072#1082#1088#1099#1090#1080#1077#1084' '#1087#1088#1080#1083#1086#1078#1077#1085#1080#1081
       #1055#1077#1088#1077#1079#1072#1075#1088#1091#1079#1080#1090#1100' '#1089' '#1074#1086#1089#1089#1090#1072#1085#1086#1074#1083#1077#1085#1080#1077#1084' '#1087#1088#1080#1083#1086#1078#1077#1085#1080#1081
-      #1055#1077#1088#1077#1093#1086#1076' '#1074' '#1075#1080#1073#1077#1088#1085#1072#1094#1080#1102' ('#1089#1086#1085')')
+      #1055#1077#1088#1077#1093#1086#1076' '#1074' '#1075#1080#1073#1077#1088#1085#1072#1094#1080#1102' ('#1089#1086#1085' '#1089' '#1074#1099#1082#1083#1102#1095#1077#1085#1080#1077#1084')'
+      #1055#1077#1088#1077#1093#1086#1076' '#1074' '#1089#1086#1085' ('#1084#1080#1085#1080#1084#1072#1083#1100#1085#1086#1077' '#1101#1085#1077#1088#1075#1086#1087#1086#1090#1088#1077#1073'.)')
     TabOrder = 0
-    OnClick = RadioGroup1Click
+    OnClick = rgActionClick
   end
-  object GroupBox1: TGroupBox
+  object gpInterval: TGroupBox
     Left = 478
     Top = 8
     Width = 130
@@ -3221,7 +3222,7 @@ object Form1: TForm1
       Value = 0
     end
   end
-  object RadioGroup2: TRadioGroup
+  object rgTimerType: TRadioGroup
     Left = 287
     Top = 8
     Width = 185
@@ -3232,23 +3233,21 @@ object Form1: TForm1
       #1057#1088#1077#1076#1089#1090#1074#1072#1084#1080' '#1089#1080#1089#1090#1077#1084#1099
       #1057#1088#1077#1076#1089#1090#1074#1072#1084#1080' '#1087#1088#1086#1075#1088#1072#1084#1084#1099)
     TabOrder = 2
-    OnClick = RadioGroup2Click
+    OnClick = rgTimerTypeClick
   end
-  object BitBtn1: TBitBtn
-    Left = 8
+  object bBtnRun: TBitBtn
+    Left = 287
     Top = 151
-    Width = 464
+    Width = 185
     Height = 25
-    Caption = #1042#1099#1087#1086#1083#1085#1080#1090#1100' '#1086#1090#1082#1083#1102#1095#1077#1085#1080#1077
-    DoubleBuffered = True
+    Caption = #1042#1099#1087#1086#1083#1085#1080#1090#1100
     Enabled = False
     Kind = bkOK
     NumGlyphs = 2
-    ParentDoubleBuffered = False
     TabOrder = 3
-    OnClick = BitBtn1Click
+    OnClick = bBtnRunClick
   end
-  object GroupBox2: TGroupBox
+  object gpAdditional: TGroupBox
     Left = 287
     Top = 71
     Width = 185
@@ -3256,7 +3255,7 @@ object Form1: TForm1
     Caption = ' '#1044#1086#1087#1086#1083#1085#1080#1090#1077#1083#1100#1085#1086'... '
     Enabled = False
     TabOrder = 4
-    object CheckBox1: TCheckBox
+    object cbVisualTimer: TCheckBox
       Left = 11
       Top = 47
       Width = 142
@@ -3265,7 +3264,7 @@ object Form1: TForm1
       Enabled = False
       TabOrder = 0
     end
-    object CheckBox2: TCheckBox
+    object cbForceShutdown: TCheckBox
       Left = 11
       Top = 13
       Width = 142
@@ -3276,7 +3275,7 @@ object Form1: TForm1
       WordWrap = True
     end
   end
-  object Button1: TButton
+  object btnSetReason: TButton
     Left = 478
     Top = 125
     Width = 130
@@ -3290,30 +3289,28 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 5
-    OnClick = Button1Click
+    OnClick = btnSetReasonClick
   end
-  object BitBtn2: TBitBtn
+  object bBtnCancel: TBitBtn
     Left = 478
     Top = 151
     Width = 130
     Height = 25
     Caption = #1054#1090#1084#1077#1085#1072
-    DoubleBuffered = True
     Enabled = False
     Kind = bkCancel
     NumGlyphs = 2
-    ParentDoubleBuffered = False
     TabOrder = 6
-    OnClick = BitBtn2Click
+    OnClick = bBtnCancelClick
   end
-  object ShutdownTimer: TTimer
+  object timeVisInterval: TTimer
+    Enabled = False
+    OnTimer = timeVisIntervalTimer
+    Left = 584
+  end
+  object timeShutdown: TTimer
     Enabled = False
     Left = 168
     Top = 65528
-  end
-  object Timer1: TTimer
-    Enabled = False
-    OnTimer = Timer1Timer
-    Left = 584
   end
 end
