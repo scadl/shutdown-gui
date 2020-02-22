@@ -93,3 +93,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+#Delphi
+Debug
+Release
+__history
+__recovery
+uWinVersion.pas
